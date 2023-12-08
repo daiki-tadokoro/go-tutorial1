@@ -2,29 +2,20 @@ package main
 
 import "fmt"
 
-func outer() {
-	var s4 string = "outer"
-	fmt.Println(s4)
-}
+// 型
+// 整数型
 
 func main() {
-	// 暗黙的な定義(型推論)
-	// 変数名 := 値
-	i4 := 400
-	fmt.Println(i4) // 400
+	var i int = 100 // 環境依存
 
-	// 値の更新
-	i4 = 450
-	fmt.Println(i4) // 450
+	// var i2 int8 = 100 // 環境依存せずに8bitの整数型を指定できる
 
-	// 再定義はできない
-	// i4 := 500
-	// fmt.Println(i4)
+	fmt.Println(i + 50) // 100 + 50 = 150
 
-	// 型の違う値を代入することはできない
-	// i4 = "Hello"
-	// fmt.Println(i4)
+	var i3 int32 = 200
+	// 型の調べ方
+	fmt.Printf("%T\n", i3) // int32
 
-	outer()
-
+	fmt.Printf("%T\n", int(i3)) // int32からintに変換
+	fmt.Println(i + int(i3))    // 300
 }
