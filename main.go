@@ -3,19 +3,29 @@ package main
 import "fmt"
 
 // 型
-// 整数型
+// 浮動小数点型
 
 func main() {
-	var i int = 100 // 環境依存
+	var fl64 float64 = 2.4
+	fmt.Println(fl64)
 
-	// var i2 int8 = 100 // 環境依存せずに8bitの整数型を指定できる
+	fl := 3.2
+	fmt.Println(fl64 + fl)
+	fmt.Printf("%T, %T\n", fl64, fl)
 
-	fmt.Println(i + 50) // 100 + 50 = 150
+	var fl32 float32 = 1.2
+	fmt.Printf("%T\n", fl32) // float32
 
-	var i3 int32 = 200
-	// 型の調べ方
-	fmt.Printf("%T\n", i3) // int32
+	// 型変換
+	fmt.Printf("%T\n", float64(fl32)) // float64
 
-	fmt.Printf("%T\n", int(i3)) // int32からintに変換
-	fmt.Println(i + int(i3))    // 300
+	zero := 0.0
+	pinf := 1.0 / zero
+	fmt.Println(pinf) // +Inf
+
+	ninf := -1.0 / zero
+	fmt.Println(ninf) // -Inf
+
+	nan := zero / zero
+	fmt.Println(nan) // NaN
 }
