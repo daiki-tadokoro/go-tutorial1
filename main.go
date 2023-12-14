@@ -3,31 +3,16 @@ package main
 import "fmt"
 
 // 型
-// 文字列型
+// byte(unit8)型
 
 func main() {
-	var s string = "Hello Golang"
-	fmt.Printf("%T\n", s) // string
+	byteA := []byte{72, 73}
+	fmt.Println(byteA) // [72 73]
 
-	var s1 string = "300"
-	fmt.Printf("%T\n", s1) // string
+	// 文字列に変換
+	fmt.Println(string(byteA)) // HI
 
-	// 複数行の文字列
-	var s2 string = `Hello
-	Golang
-	!`
-	fmt.Println(s2)
-	fmt.Printf("%T\n", s2) // string
-
-	// ダブルクォーテーションを文字列として扱う
-	var s3 string = "\""
-	fmt.Println(s3) // "
-
-	var s4 string = `"`
-	fmt.Println(s4) // "
-
-	// 文字列の長さ
-	fmt.Println(s[0])         // 72
-	fmt.Println(string(s[0])) // H
-
+	// 文字列をbyte型に変換
+	c := []byte("HI")
+	fmt.Println(c) // [72 73]
 }
